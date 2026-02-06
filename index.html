@@ -1,240 +1,220 @@
-<HTML>
-<HEAD>
-
-<TITLE>The Gates at Parkside Village Gazebo 2010</TITLE>
-<META NAME="keywords" CONTENT="Gazebo 2010">
-<META NAME="Generator" CONTENT="HTMLpad"> 
-<META NAME="description" CONTENT= "Reflections of Gazebo 2010"> 
-<META NAME="author" CONTENT= "Sha Raza">
-<META NAME="DISTRIBUTION" CONTENT="global">
-<META NAME="REVISIT-AFTER" CONTENT="15 days">
-<META NAME="ROBOTS" CONTENT="all">
-
-</HEAD>
 
 
-<BODY background="" BGColor="000000" TEXT="ffffff" LINK="blue" VLINK="red" ALINK="green">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gates at Parkside Village Gazebo 2010</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #333;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .controls button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #222;
+            color: white;
+            border: 1px solid #555;
+            margin: 5px;
+        }
+        .controls button:hover { background: #444; }
+        .controls button:disabled { opacity: 0.3; cursor: not-allowed; }
+        hr { border: 0; border-top: 2px solid red; width: 80%; margin: 20px auto; }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <div class="controls">
+        <button id="btnPrev" onclick="prev()">&lt;&lt; Previous</button>
+        <button id="btnPlay" onclick="togglePlay()">Play / Stop</button>
+        <button id="btnNext" onclick="next()">Next &gt;&gt;</button>
+    </div>
 
+    <img id="mainSlide" src="" alt="Slideshow Image">
 
+    <div id="fileInfo">
+        <span id="fileName"></span><br>
+        Picture: <span id="currentIdx">0</span> of <span id="totalIdx">0</span>
+    </div>
 
-<p align="center"><input type="button" id="btnPrev" value="<< Previous" onclick="Prev();"> <input type="button" id="bntPlay" value="Play - Stop" onclick="Play()"> <input type="button" id="btnNext" value="  Next >>  " onclick="Next();"></p>
+    <hr>
+    <h2>Reflections of Gazebo 2010</h2>
+    <p>Residents of The Gates at Parkside Village</p>
+</div>
 
-<p align="center"><img id="_Ath_Slide" onload="OnImgLoad()"> </p>
+<script>
+    // Configuration: Add your images here
+    const images = [
+        "gpv2010 (1).jpg",
+"gpv2010 (2).jpg",
+"gpv2010 (3).jpg",
+"gpv2010 (4).jpg",
+"gpv2010 (5).jpg",
+"gpv2010 (6).jpg",
+"gpv2010 (7).jpg",
+"gpv2010 (8).jpg",
+"gpv2010 (9).jpg",
+"gpv2010 (10).jpg",
+"gpv2010 (11).jpg",
+"gpv2010 (12).jpg",
+"gpv2010 (13).jpg",
+"gpv2010 (14).jpg",
+"gpv2010 (15).jpg",
+"gpv2010 (16).jpg",
+"gpv2010 (17).jpg",
+"gpv2010 (18).jpg",
+"gpv2010 (19).jpg",
+"gpv2010 (20).jpg",
+"gpv2010 (21).jpg",
+"gpv2010 (22).jpg",
+"gpv2010 (23).jpg",
+"gpv2010 (24).jpg",
+"gpv2010 (25).jpg",
+"gpv2010 (26).jpg",
+"gpv2010 (27).jpg",
+"gpv2010 (28).jpg",
+"gpv2010 (29).jpg",
+"gpv2010 (30).jpg",
+"gpv2010 (31).jpg",
+"gpv2010 (32).jpg",
+"gpv2010 (33).jpg",
+"gpv2010 (34).jpg",
+"gpv2010 (35).jpg",
+"gpv2010 (36).jpg",
+"gpv2010 (37).jpg",
+"gpv2010 (38).jpg",
+"gpv2010 (39).jpg",
+"gpv2010 (40).jpg",
+"gpv2010 (41).jpg",
+"gpv2010 (42).jpg",
+"gpv2010 (43).jpg",
+"gpv2010 (44).jpg",
+"gpv2010 (45).jpg",
+"gpv2010 (46).jpg",
+"gpv2010 (47).jpg",
+"gpv2010 (48).jpg",
+"gpv2010 (49).jpg",
+"gpv2010 (50).jpg",
+"gpv2010 (51).jpg",
+"gpv2010 (52).jpg",
+"gpv2010 (53).jpg",
+"gpv2010 (54).jpg",
+"gpv2010 (55).jpg",
+"gpv2010 (56).jpg",
+"gpv2010 (57).jpg",
+"gpv2010 (58).jpg",
+"gpv2010 (59).jpg",
+"gpv2010 (60).jpg",
+"gpv2010 (61).jpg",
+"gpv2010 (62).jpg",
+"gpv2010 (63).jpg",
+"gpv2010 (64).jpg",
+"gpv2010 (65).jpg",
+"gpv2010 (66).jpg",
+"gpv2010 (67).jpg",
+"gpv2010 (68).jpg",
+"gpv2010 (69).jpg",
+"gpv2010 (70).jpg",
+"gpv2010 (71).jpg",
+"gpv2010 (72).jpg",
+"gpv2010 (73).jpg",
+"gpv2010 (74).jpg",
+"gpv2010 (75).jpg",
+"gpv2010 (76).jpg",
+"gpv2010 (77).jpg",
+"gpv2010 (78).jpg",
+"gpv2010 (79).jpg",
+"gpv2010 (80).jpg",
+"gpv2010 (81).jpg",
+"gpv2010 (82).jpg",
+"gpv2010 (83).jpg",
+"gpv2010 (84).jpg",
+"gpv2010 (85).jpg",
+"gpv2010 (86).jpg",
+"gpv2010 (87).jpg",
+"gpv2010 (88).jpg",
+"gpv2010 (89).jpg",
+"gpv2010 (90).jpg",
+"gpv2010 (91).jpg",
+"gpv2010 (92).jpg",
+"gpv2010 (93).jpg",
+"gpv2010 (94).jpg",
+"gpv2010 (95).jpg",
+"gpv2010 (96).jpg",
+"gpv2010 (97).jpg",
+"gpv2010 (98).jpg",
+"gpv2010 (99).jpg",
+"gpv2010 (99).jpg",
+"gpv2010 (100).jpg",
+    ];
 
+    let currentIndex = 0;
+    let isPlaying = false;
+    let slideTimer;
+    const intervalTime = 3000; // 3 seconds per slide
 
+    const slideImg = document.getElementById('mainSlide');
+    const fileNameTxt = document.getElementById('fileName');
+    const currentTxt = document.getElementById('currentIdx');
+    const totalTxt = document.getElementById('totalIdx');
 
-<font size= "-1">
+    function updateSlide() {
+        slideImg.src = images[currentIndex];
+        currentTxt.innerText = currentIndex + 1;
+        totalTxt.innerText = images.length;
+        // Optional: Show filename if desired
+        // fileNameTxt.innerText = images[currentIndex];
+    }
 
-<p align="center"> <SPAN id="_Ath_FileName"> </SPAN> <br>
-Number of Pictures: <SPAN id="_Ath_Img_X"></SPAN> of <SPAN id="_Ath_Img_N"></SPAN></p></Font>
+    function next() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSlide();
+    }
 
-<p align="center">
+    function prev() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateSlide();
+    }
 
-<script language="JavaScript1.2">
+    function togglePlay() {
+        isPlaying = !isPlaying;
+        const btnPrev = document.getElementById('btnPrev');
+        const btnNext = document.getElementById('btnNext');
 
-/*
-Interactive Image slideshow with text description
-By Christian Carlessi Salvad  (cocolinks@c.net.gt). Keep this notice intact.
-Visit http://www.dynamicdrive.com for script
-*/
+        if (isPlaying) {
+            btnPrev.disabled = btnNext.disabled = true;
+            slideTimer = setInterval(next, intervalTime);
+        } else {
+            btnPrev.disabled = btnNext.disabled = false;
+            clearInterval(slideTimer);
+        }
+    }
 
-
-g_fPlayMode = 0;
-g_iimg = -1;
-g_imax = 0;
-g_ImageTable = new Array();
-
-function ChangeImage(fFwd)
-{
-if (fFwd)
-{
-if (++g_iimg==g_imax)
-g_iimg=0;
-}
-else
-{
-if (g_iimg==0)
-g_iimg=g_imax;
-g_iimg--;
-}
-Update();
-}
-
-function getobject(obj){
-if (document.getElementById)
-return document.getElementById(obj)
-else if (document.all)
-return document.all[obj]
-}
-
-function Update(){
-getobject("_Ath_Slide").src = g_ImageTable[g_iimg][0];
-getobject("_Ath_FileName").innerHTML = g_ImageTable[g_iimg][1];
-getobject("_Ath_Img_X").innerHTML = g_iimg + 1;
-getobject("_Ath_Img_N").innerHTML = g_imax;
-}
-
-
-function Play()
-{
-g_fPlayMode = !g_fPlayMode;
-if (g_fPlayMode)
-{
-getobject("btnPrev").disabled = getobject("btnNext").disabled = true;
-Next();
-}
-else 
-{
-getobject("btnPrev").disabled = getobject("btnNext").disabled = false;
-
-}
-}
-function OnImgLoad()
-{
-if (g_fPlayMode)
-window.setTimeout("Tick()", g_dwTimeOutSec*1000);
-}
-function Tick() 
-{
-if (g_fPlayMode)
-Next();
-}
-function Prev()
-{
-ChangeImage(false);
-}
-function Next()
-{
-ChangeImage(true);
-}
-
-
-////configure below variables/////////////////////////////
-
-//configure the below images and description to your own. 
-
-
-g_ImageTable[g_imax++] = new Array ("gpv2010 (1).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (2).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (3).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (4).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (5).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (6).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (7).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (8).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (9).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (10).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (11).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (12).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (13).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (14).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (15).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (16).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (17).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (18).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (19).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (20).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (21).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (22).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (23).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (24).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (25).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (26).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (27).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (28).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (29).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (30).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (31).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (32).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (33).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (34).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (35).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (36).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (37).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (38).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (39).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (40).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (41).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (42).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (43).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (44).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (45).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (46).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (47).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (48).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (49).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (50).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (51).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (52).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (53).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (54).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (55).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (56).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (57).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (58).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (59).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (60).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (61).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (62).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (63).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (64).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (65).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (66).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (67).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (68).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (69).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (70).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (71).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (72).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (73).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (74).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (75).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (76).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (77).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (78).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (79).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (80).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (81).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (82).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (83).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (84).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (85).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (86).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (87).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (88).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (89).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (90).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (91).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (92).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (93).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (94).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (95).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (96).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (97).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (98).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (99).jpg", "");
-g_ImageTable[g_imax++] = new Array ("gpv2010 (99).jpg", "");
-
-
-
-
-
-//extend the above list as desired
-g_dwTimeOutSec=1
-
-////End configuration/////////////////////////////
-
-if (document.getElementById||document.all)
-window.onload=Play
-
+    // Initialize
+    window.onload = () => {
+        updateSlide();
+        togglePlay(); // Starts automatically
+    };
 </script>
-</p>
 
-<p align="center"><font face="Arial" size="+1">Reflections of Gazebo 2010<br>
-Residents of The Gates at Parkside Village</a></font></p>
-
-<hr color="red" width="80%" size="2">
-
-
-
+</body>
+</html>
