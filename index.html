@@ -1,0 +1,278 @@
+<HTML>
+<HEAD>
+
+<TITLE>The Gates at Parkside Village Gazebo 2010</TITLE>
+<META NAME="keywords" CONTENT="Gazebo 2010">
+<META NAME="Generator" CONTENT="HTMLpad"> 
+<META NAME="description" CONTENT= "Reflections of Gazebo 2010"> 
+<META NAME="author" CONTENT= "Sha Raza">
+<META NAME="DISTRIBUTION" CONTENT="global">
+<META NAME="REVISIT-AFTER" CONTENT="15 days">
+<META NAME="ROBOTS" CONTENT="all">
+
+</HEAD>
+
+
+<BODY background="" BGColor="000000" TEXT="ffffff" LINK="blue" VLINK="red" ALINK="green">
+
+
+
+
+<p align="center"><input type="button" id="btnPrev" value="<< Previous" onclick="Prev();"> <input type="button" id="bntPlay" value="Play - Stop" onclick="Play()"> <input type="button" id="btnNext" value="  Next >>  " onclick="Next();"></p>
+
+<p align="center"><img id="_Ath_Slide" onload="OnImgLoad()"> </p>
+
+
+
+<font size= "-1">
+
+<p align="center"> <SPAN id="_Ath_FileName"> </SPAN> <br>
+Number of Pictures: <SPAN id="_Ath_Img_X"></SPAN> of <SPAN id="_Ath_Img_N"></SPAN></p></Font>
+
+<p align="center">
+
+<script language="JavaScript1.2">
+
+/*
+Interactive Image slideshow with text description
+By Christian Carlessi Salvad  (cocolinks@c.net.gt). Keep this notice intact.
+Visit http://www.dynamicdrive.com for script
+*/
+
+
+g_fPlayMode = 0;
+g_iimg = -1;
+g_imax = 0;
+g_ImageTable = new Array();
+
+function ChangeImage(fFwd)
+{
+if (fFwd)
+{
+if (++g_iimg==g_imax)
+g_iimg=0;
+}
+else
+{
+if (g_iimg==0)
+g_iimg=g_imax;
+g_iimg--;
+}
+Update();
+}
+
+function getobject(obj){
+if (document.getElementById)
+return document.getElementById(obj)
+else if (document.all)
+return document.all[obj]
+}
+
+function Update(){
+getobject("_Ath_Slide").src = g_ImageTable[g_iimg][0];
+getobject("_Ath_FileName").innerHTML = g_ImageTable[g_iimg][1];
+getobject("_Ath_Img_X").innerHTML = g_iimg + 1;
+getobject("_Ath_Img_N").innerHTML = g_imax;
+}
+
+
+function Play()
+{
+g_fPlayMode = !g_fPlayMode;
+if (g_fPlayMode)
+{
+getobject("btnPrev").disabled = getobject("btnNext").disabled = true;
+Next();
+}
+else 
+{
+getobject("btnPrev").disabled = getobject("btnNext").disabled = false;
+
+}
+}
+function OnImgLoad()
+{
+if (g_fPlayMode)
+window.setTimeout("Tick()", g_dwTimeOutSec*1000);
+}
+function Tick() 
+{
+if (g_fPlayMode)
+Next();
+}
+function Prev()
+{
+ChangeImage(false);
+}
+function Next()
+{
+ChangeImage(true);
+}
+
+
+////configure below variables/////////////////////////////
+
+//configure the below images and description to your own. 
+
+
+g_ImageTable[g_imax++] = new Array ("gpv2010 (1).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (2).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (3).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (4).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (5).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (6).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (7).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (8).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (9).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (10).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (11).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (12).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (13).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (14).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (15).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (16).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (17).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (18).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (19).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (20).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (21).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (22).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (23).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (24).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (25).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (26).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (27).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (28).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (29).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (30).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (31).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (32).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (33).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (34).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (35).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (36).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (37).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (38).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (39).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (40).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (41).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (42).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (43).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (44).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (45).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (46).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (47).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (48).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (49).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (50).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (51).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (52).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (53).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (54).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (55).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (56).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (57).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (58).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (59).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (60).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (61).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (62).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (63).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (64).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (65).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (66).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (67).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (68).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (69).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (70).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (71).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (72).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (73).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (74).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (75).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (76).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (77).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (78).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (79).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (80).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (81).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (82).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (83).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (84).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (85).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (86).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (87).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (88).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (89).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (90).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (91).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (92).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (93).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (94).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (95).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (96).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (97).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (98).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (99).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (99).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (100).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (102).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (103).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (104).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (105).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (106).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (107).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (108).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (9).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (110).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (111).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (112).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (113).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (114).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (115).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (116).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (117).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (118).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (119).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (120).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (121).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (122).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (123).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (124).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (125).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (126).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (127).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (128).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (129).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (130).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (131).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (132).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (133).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (134).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (135).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (136).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (137).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (138).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (139).jpg", "");
+g_ImageTable[g_imax++] = new Array ("gpv2010 (140).jpg", "");
+
+
+
+
+//extend the above list as desired
+g_dwTimeOutSec=1
+
+////End configuration/////////////////////////////
+
+if (document.getElementById||document.all)
+window.onload=Play
+
+</script>
+</p>
+
+<p align="center"><font face="Arial" size="+1">Reflections of Gazebo 2010<br>
+Residents of The Gates at Parkside Village</a></font></p>
+
+<hr color="red" width="80%" size="2">
+
+
